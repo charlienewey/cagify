@@ -45,4 +45,9 @@ var walk = function (node) {
 };
 
 walk(document.body);
-chrome.runtime.sendMessage({"ee": eliminatedElements});
+
+if (eliminatedElements > 0) {
+  chrome.runtime.sendMessage({
+    "elements": eliminatedElements
+  });
+}
