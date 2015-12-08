@@ -20,19 +20,18 @@ var walk = function (node) {
     switch (node.nodeType) {
       case 1: // element
         var tagName = node.tagName.toLowerCase();
-        if (node.children.length === 0) {
-          if (tagName === "img") {
-            if (dislike(node.src) || dislike(node.alt)) {
-              var w = node.clientWidth, h = node.clientHeight;
-              if (w > 50 && h > 50) {
-                node.src = "https://www.placecage.com/c/" + w + "/" + h;
-                break;
-              }
+        if (tagName === "img") {
+          if (dislike(node.src) || dislike(node.alt)) {
+            var w = node.clientWidth, h = node.clientHeight;
+            if (w > 50 && h > 50) {
+              node.src = "https://www.placecage.com/c/" + w + "/" + h;
+              break;
             }
-          } else if (tagName === "p" || tagName === "a" || tagName[0] === "h") {
-            node.innerHTML = node.innerHTML.replace(re, "Nicholas Cage");
-            break;
           }
+        } else if (tagName === "p" || tagName[0] === "h" ||
+                   (tagName === "a" && node.children.length === 0)) {
+          node.innerHTML = node.innerHTML.replace(re, "Nicholas Cage");
+          break;
         }
       case 9: // document
       case 11: // document fragment
