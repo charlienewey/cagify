@@ -1,0 +1,32 @@
+{
+    "manifest_version": 2,
+
+    "name": "Killdashian",
+    "description": "This extension attempts to rid the Internet of every trace of the vapid waste of oxygen that is the Kardashian family.",
+    "version": "0.1",
+
+    "browser_action": {
+        "default_icon": "res/img/icon.png"
+    },
+
+    "options_page": "src/html/options.html",
+
+    "background": {
+        "scripts": [
+            "./src/js/background.js"
+        ]
+    },
+
+    "content_scripts": [
+        {
+            "matches": ["*://*/*"],
+            "js": ["./src/js/filter.js"],
+            "run_at": "document_end"
+        }
+    ],
+
+    "permissions": [
+        "activeTab",
+        "storage"
+    ]
+}
