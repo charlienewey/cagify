@@ -9,8 +9,6 @@
         "default_icon": "res/img/icon.png"
     },
 
-    "options_page": "src/html/options.html",
-
     "background": {
         "scripts": [
             "./src/js/background.js"
@@ -21,7 +19,7 @@
         {
             "matches": ["*://*/*"],
             "js": ["./src/js/filter.js"],
-            "run_at": "document_end"
+            "run_at": "document_idle"
         }
     ],
 
