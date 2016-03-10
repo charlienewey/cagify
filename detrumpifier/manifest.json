@@ -3,7 +3,7 @@
 
     "name": "DeTrumpifier",
     "description": "This extension attempts to purge Donald Trump from a user's browser. Simple.",
-    "version": "0.1",
+    "version": "0.1.1",
 
     "browser_action": {
         "default_icon": "res/img/icon.png"
