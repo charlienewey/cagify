@@ -1,8 +1,8 @@
 {
     "manifest_version": 2,
 
-    "name": "Killdashian",
-    "description": "This extension attempts to rid the Internet of every trace of the vapid waste of oxygen that is the Kardashian family.",
+    "name": "DeTrump",
+    "description": "This extension attempts to purge Donald Trump from a user's browser. Simple.",
     "version": "0.1",
 
     "browser_action": {

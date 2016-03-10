@@ -1,6 +1,6 @@
 var eliminatedElements = 0;
 
-var re = /(.*(kim|khloe|kourtney).*)?(kardashian)/ig;
+var re = /(.*(donald).*)?(trump)/ig;
 var dislike = function (content) {
   if (content && content.match(re)) {
     eliminatedElements += 1;
