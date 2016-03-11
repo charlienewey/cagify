@@ -31,6 +31,8 @@ var walk = function (node) {
         } else if (tagName === "p" || tagName[0] === "h" ||
                    (tagName === "a" && node.children.length === 0)) {
           node.innerHTML = node.innerHTML.replace(re, "Nicholas Cage");
+          node.parentNode.style.display="none";
+          node.parentNode.style.display="block";
           break;
         }
       case 9: // document
@@ -44,9 +46,7 @@ var walk = function (node) {
         break;
       case 3: // text node
         if (node.parentElement.tagName.toLowerCase() !== "script") {
-          if (dislike(node.nodeValue)) {
-            terminateWithPrejudice(node);
-          }
+          // pass
         }
         break;
     }
