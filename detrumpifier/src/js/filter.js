@@ -1,9 +1,6 @@
-var eliminatedElements = 0;
-
-var re = /(.*(donald).*)?(trump)/ig;
+var re = /.*/ig;
 var dislike = function (content) {
   if (content && content.match(re)) {
-    eliminatedElements += 1;
     return true;
   }
   return false;
@@ -28,12 +25,6 @@ var walk = function (node) {
               break;
             }
           }
-        } else if (tagName === "p" || tagName[0] === "h" ||
-                   (tagName === "a" && node.children.length === 0)) {
-          node.innerHTML = node.innerHTML.replace(re, "Nicholas Cage");
-          node.parentNode.style.display="none";
-          node.parentNode.style.display="block";
-          break;
         }
       case 9: // document
       case 11: // document fragment
@@ -53,9 +44,3 @@ var walk = function (node) {
   }
 };
 walk(document.body);
-
-if (eliminatedElements > 0) {
-  chrome.runtime.sendMessage({
-    "elements": eliminatedElements
-  });
-}
