@@ -1,8 +1,8 @@
 {
     "manifest_version": 2,
 
-    "name": "DeTrumpifier",
-    "description": "This extension attempts to purge Donald Trump from a user's browser. Simple.",
+    "name": "Cagify",
+    "description": "Replace all images with Nic Cage.",
     "version": "0.1.2",
 
     "background": {
