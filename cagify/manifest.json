@@ -5,12 +5,6 @@
     "description": "Replace all images with Nic Cage.",
     "version": "0.1.2",
 
-    "background": {
-        "scripts": [
-            "./src/js/background.js"
-        ]
-    },
-
     "content_scripts": [
         {
             "matches": ["*://*/*"],
